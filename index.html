@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        /* Reset and general styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #333;
+        }
+
+        /* Container styling */
+        .container {
+            width: 400px;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #764ba2;
+            font-size: 24px;
+        }
+
+        /* Input styling */
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Button styling */
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: #667eea;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+    </style>
+    <script>
+        function register() {
+            // Perform basic validation
+            var name = document.getElementById("name").value;
+            var department = document.getElementById("department").value;
+            var year = document.getElementById("year").value;
+            var section = document.getElementById("section").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (name && department && year && section && password && confirmPassword) {
+                if (password !== confirmPassword) {
+                    alert("Passwords do not match!");
+                    return;
+                }
+                
+                // Redirect to the login page after successful registration
+                alert("Registration successful! Redirecting to login page.");
+                window.location.href = "login.html";
+            } else {
+                alert("Please fill in all fields.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Register Now</h2>
+        <form id="registerForm">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="text" id="department" placeholder="Department" required>
+            <input type="text" id="year" placeholder="Year" required>
+            <input type="text" id="section" placeholder="Section" required>
+            <input type="password" id="password" placeholder="Create Password" required>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+            <button type="button" onclick="register()">Register</button>
+        </form>
+    </div>
+</body>
+</html>

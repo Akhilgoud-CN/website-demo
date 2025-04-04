@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Centered Content Box */
+        .container {
+            width: 400px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        h2 {
+            color: #ffeb3b;
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        /* Resume Links */
+        a {
+            color: #ffeb3b;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 10px;
+            display: inline-block;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Buttons */
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(45deg, #ff8a00, #e52e71);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #e52e71, #ff8a00);
+            transform: scale(1.05);
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: none;
+            font-size: 18px;
+            color: #ffeb3b;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Welcome to My Site</h2>
+        <p>Explore my resumes below.</p>
+        <a href="Resume 1.1.pdf" target="_blank">📄 Resume 1.1</a> | 
+        <a href="Resume 2.2.pdf" target="_blank">📄 Resume 2.2</a>
+        <br><br>
+        <button onclick="logout()">Logout</button>
+        <p class="loading" id="loadingText">Logging out...</p>
+    </div>
+
+    <script>
+        function logout() {
+            let loadingText = document.getElementById("loadingText");
+            loadingText.style.display = "block";
+            setTimeout(() => {
+                window.location.href = "goodbye.html";
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>
